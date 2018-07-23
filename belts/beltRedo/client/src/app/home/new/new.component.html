@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Let's Eat</h1>
+  <h3>Register a Restaurant</h3>
+  <form>
+    <div class="form-group">
+      <label for="name">Restaurant Name:</label>
+      <input class="form-control" [(ngModel)]='food.name' type="text" name="name" id="name">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.name">{{ errors.name.message }}</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Cuisine:</label>
+      <input class="form-control" [(ngModel)]='food.type' type="text" name="type" id="type">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.type">{{ errors.type.message }}</small>
+    </div>
+    <input class="btn btn-outline-success" (click)="createFood($event)" type="submit" value="Register">
+    <button class="btn btn-danger" [routerLink]="['food']">Cancel</button>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <h3>Submit a movie and your review</h3>
+  <form>
+    <div class="form-group">
+      <label for="name">Movie Title:</label>
+      <input class="form-control" [(ngModel)]='movie.title' type="text" name="name" id="name">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.title">{{ errors.title.message }}</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Your name:</label>
+      <input class="form-control" [(ngModel)]='review.name' type="text" name="type" id="type">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.name">{{ errors.name.message }}</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Rating (1-5):</label>
+      <input class="form-control" [(ngModel)]='review.rating' type="text" name="type" id="type">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.rating">{{ errors.rating.message }}</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Your Review:</label>
+      <input class="form-control" [(ngModel)]='review.comment' type="text" name="type" id="type">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.comment">{{ errors.comment.message }}</small>
+    </div>
+    <input class="btn btn-outline-success" (click)="createMovie(thisMovie, $event)" type="submit" value="Submit">
+    <button class="btn btn-danger" [routerLink]="['/movie']">Cancel</button>
+  </form>
+</div>

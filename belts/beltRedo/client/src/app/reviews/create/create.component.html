@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Let's Eat</h1>
+  <h3>Write a review for </h3>
+  <form>
+    <div class="form-group">
+      <label for="name">Your name:</label>
+      <input class="form-control" [(ngModel)]='food.review.review_name' type="text" name="food.review.review_name" id="name">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.name">{{ errors.review_name.message }}</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Rating:</label>
+      <select class="form-control" [(ngModel)]='food.review.rating' name="food.review.rating" id="rating">
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+      </select>
+      <!-- <small class="form-text text-muted alert alert-danger" *ngIf="errors.type">{{ errors.type.message }}</small> -->
+    </div>
+    <div class="form-group">
+      <label for="name">Comment:</label>
+      <input class="form-control" [(ngModel)]='food.review.comment' type="text" name="food.review.comment" id="comment">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.type">{{ errors.comment.message }}</small>
+    </div>
+    <input class="btn btn-outline-success" (click)="createReview(food, $event)" type="submit" value="Leave Review">
+    <button class="btn btn-danger" [routerLink]="['food']">Cancel</button>
+  </form>
+</div>

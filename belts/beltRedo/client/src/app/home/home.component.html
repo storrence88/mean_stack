@@ -1,0 +1,29 @@
+
+<div class="container">
+  <h1>Let's Eat</h1>
+  <h3>Choose a restaurant from below:</h3>
+  <br>
+  <button class="btn btn-primary" [routerLink]="['new']">Add a new Restaurant</button>
+  <br>
+  <router-outlet></router-outlet>
+  <table class="table table-striped shadow-lg p-3 mb-5 bg-white rounded">
+    <thead class="thead-dark">
+      <tr>
+        <th>Restaurant</th>
+        <th>Cuisine</th>
+        <th>Actions Available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let food of foods">
+        <td class="upper">{{ food.name }}</td>
+        <td class="upper">{{ food.type }}</td>
+        <td>
+          <button class="btn btn-info" (click)="getReviews(food)" [routerLink]="['reviews']">Read Reviews</button>
+          <button class="btn btn-warning" (click)="editFood(food, $event)" [routerLink]="[food._id,'edit']">Update</button>
+          <button class="btn btn-danger" (click)="delete(food)" [routerLink]="['']">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
