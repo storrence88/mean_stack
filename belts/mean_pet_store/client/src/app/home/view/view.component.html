@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Pet Shelter</h1>
+    <h3>Details about {{ pet.name }}</h3>
+    <p>Pet Type: {{ pet.type }}</p>
+    <p>Pet Description: {{ pet.description }}</p>
+    <p>Pet Skills: {{ pet.skill1 }} </p>
+    <p> {{ pet.skill2 }} </p>
+    <p> {{ pet.skill3 }}</p>
+    <p> Likes: {{ pet.likes }} </p>
+    
+    <button [disabled]="likes" (click)="like(pet)">Like this Pet!</button><button (click)="delete(pet)" (click)="goHome()">Adopt this Pet!</button>
+    <p>or Click below to go back</p>
+    <button [routerLink]="['']">Home</button>
+</div>

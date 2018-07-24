@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Pet Shelter</h1>
+  <h3>Know of a pet needing a home?</h3>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input class="form-control" [(ngModel)]='pet.name' type="text" name="name" id="name">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.name">{{ errors.name.message }}</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Type:</label>
+      <input class="form-control" [(ngModel)]='pet.type' type="text" name="type" id="type">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.type">{{ errors.type.message }}</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Description:</label>
+      <input class="form-control" [(ngModel)]='pet.description' type="text" name="description" id="description">
+      <small class="form-text text-muted alert alert-danger" *ngIf="errors.description">{{ errors.description.message }}</small>
+    </div>
+    <div class="form-group">
+      <label for="name">Skill #1:</label>
+      <input class="form-control" [(ngModel)]='pet.skill1' type="text" name="skill1" id="skill1">
+    </div>
+    <div class="form-group">
+      <label for="name">Skill #2:</label>
+      <input class="form-control" [(ngModel)]='pet.skill2' type="text" name="skill2" id="skill2">
+    </div>
+    <div class="form-group">
+      <label for="name">Skill #3:</label>
+      <input class="form-control" [(ngModel)]='pet.skill3' type="text" name="skill3" id="skill3">
+    </div>
+    <input class="btn btn-outline-success" (click)="createPet($event)" type="submit" value="Add Pet">
+    <button  class="btn btn-danger" [routerLink]="['']">Cancel</button>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<div class="container">
+  <h1>Pet Shelter</h1>
+  <h3>These pets are looking for a home!</h3>
+  <br>
+  <button class="btn btn-primary" [routerLink]="['pets','new']">Add a pet</button>
+  <br>
+  <table class="table table-striped shadow-lg p-3 mb-5 bg-white rounded">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pets">
+        <td class="upper">{{ pet.name }}</td>
+        <td class="upper">{{ pet.type }}</td>
+        <td>
+          <button class="btn btn-info" (click)="getOnePet(pet)" [routerLink]="['pets', pet._id]">Details</button>
+          <button class="btn btn-warning" (click)="editPet(pet, $event)" [routerLink]="['pets', pet._id,'edit']">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
